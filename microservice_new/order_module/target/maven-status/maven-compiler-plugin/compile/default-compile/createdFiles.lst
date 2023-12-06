@@ -1,0 +1,13 @@
+com\microservice\Orderservice\OrderServiceApplication.class
+com\microservice\Orderservice\Config\WebConfig.class
+com\microservice\Orderservice\Controller\OrderController.class
+com\microservice\Orderservice\Entity\OrderLineItems$OrderLineItemsBuilder.class
+com\microservice\Orderservice\Dto\OrderRequest.class
+com\microservice\Orderservice\Repository\OrderRepository.class
+com\microservice\Orderservice\Entity\Order$OrderBuilder.class
+com\microservice\Orderservice\Service\OrderService.class
+com\microservice\Orderservice\Dto\OrderRequestListDto.class
+com\microservice\Orderservice\Entity\OrderLineItems.class
+com\microservice\Orderservice\ServiceImp\OrderServiceImp.class
+com\microservice\Orderservice\Entity\Order.class
+com\microservice\Orderservice\Dto\InventoryResponse.class

@@ -1,0 +1,8 @@
+com\microservice\Invertoryservice\Entity\Inventory$InventoryBuilder.class
+com\microservice\Invertoryservice\InvertoryServiceApplication.class
+com\microservice\Invertoryservice\Repository\InventoryRepository.class
+com\microservice\Invertoryservice\Entity\Inventory.class
+com\microservice\Invertoryservice\Entity\InventoryResponse$InventoryResponseBuilder.class
+com\microservice\Invertoryservice\Service\InventoryService.class
+com\microservice\Invertoryservice\Controller\InventoryController.class
+com\microservice\Invertoryservice\Entity\InventoryResponse.class
