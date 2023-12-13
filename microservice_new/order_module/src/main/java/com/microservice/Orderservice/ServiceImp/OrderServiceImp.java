@@ -13,7 +13,6 @@ import com.microservice.Orderservice.Dto.OrderRequest;
 import com.microservice.Orderservice.Dto.OrderRequestListDto;
 import com.microservice.Orderservice.Entity.Order;
 import com.microservice.Orderservice.Entity.OrderLineItems;
-import com.microservice.Orderservice.Entity.OrderLineItems.OrderLineItemsBuilder;
 import com.microservice.Orderservice.Repository.OrderRepository;
 import com.microservice.Orderservice.Service.OrderService;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -26,7 +25,7 @@ public class OrderServiceImp implements OrderService {
 	private OrderRepository orderRepo;
 
 	@Autowired
-	private WebClient webClient;
+	private WebClient.Builder webClientBuilder;
 	@Override
 	public boolean placeOrder(OrderRequest orderReq) {
 
@@ -41,8 +40,8 @@ public class OrderServiceImp implements OrderService {
 			order.setOrderLineItemsList(orderLineItemsList);
 			List<String> skuCodeList = order.getOrderLineItemsList().stream().map(orderLineItems -> orderLineItems.getSkuCode()).toList();
 
-			InventoryResponse[] responseList = webClient.get()
-					.uri("http://localhost:8082/api/inventory",
+			InventoryResponse[] responseList = webClientBuilder.build().get()
+					.uri("http://inventory-service/api/inventory",
 							uriBuilder -> uriBuilder.queryParam("skuCodeList",skuCodeList).build())
 					.retrieve()
 					.bodyToMono(InventoryResponse[].class)

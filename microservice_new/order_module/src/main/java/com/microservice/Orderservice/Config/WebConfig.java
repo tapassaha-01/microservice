@@ -1,6 +1,7 @@
 package com.microservice.Orderservice.Config;
 
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,7 +12,8 @@ import java.util.List;
 public class WebConfig {
 
     @Bean
-    public WebClient webClint(){
-        return WebClient.builder().build();
+    @LoadBalanced
+    public WebClient.Builder webClintBuilder(){
+        return WebClient.builder();
     }
 }

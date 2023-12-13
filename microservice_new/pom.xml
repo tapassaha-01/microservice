@@ -19,6 +19,7 @@
     <module>order_module</module>
     <module>inventory_module</module>
     <module>discovery-server</module>
+      <module>api-gateway</module>
   </modules>
 
   <properties>
