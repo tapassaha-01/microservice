@@ -18,7 +18,7 @@ import com.microservice.Productservice.Dto.ProductResponse;
 import com.microservice.Productservice.Service.ProductService;
 
 @RestController
-@RequestMapping(value="/product-service")
+@RequestMapping("/api/product")
 public class ProductController {
 	
 	
@@ -27,7 +27,7 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@PostMapping(value="/create")
+	@PostMapping("/create")
 	public ResponseEntity<?> createProduct(@RequestBody ProductRequest productReq){
 		if(productService.create(productReq)) {
 			return ResponseEntity
@@ -39,7 +39,7 @@ public class ProductController {
 		
 	}
 	
-	@GetMapping(value="/getall")
+	@GetMapping
 	public ResponseEntity<?> getAllProducts(){
 		List<ProductResponse> response =  productService.getAll();
 		if(response!=null) {
